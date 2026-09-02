@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "buffer.h"
 #include "device.h"
+#include "ring_buffer.h"
 
 typedef int (*Operation)(int, int);
 
@@ -43,5 +44,18 @@ int main(void)
     }
     perform_operation(add, 5, 3);
     perform_operation(multiply, 5, 3);
+
+    RingBuffer rb;
+
+    ring_buffer_init(&rb);
+
+    ring_buffer_push(&rb, 10);
+    ring_buffer_push(&rb, 20);
+    ring_buffer_push(&rb, 30);
+
+    while (ring_buffer_pop(&rb, &value)) {
+        printf("%u\n", value);
+    }
+
     return 0;
 }

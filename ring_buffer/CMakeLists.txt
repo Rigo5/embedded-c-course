@@ -1,0 +1,3 @@
+add_library(ring_buffer src/ring_buffer.c)
+
+target_include_directories(ring_buffer PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)

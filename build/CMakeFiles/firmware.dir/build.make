@@ -94,6 +94,7 @@ firmware: CMakeFiles/firmware.dir/app/main.c.o
 firmware: CMakeFiles/firmware.dir/build.make
 firmware: buffer/libbuffer.a
 firmware: device/libdevice.a
+firmware: ring_buffer/libring_buffer.a
 firmware: CMakeFiles/firmware.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/michele/projects/c/programmini/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable firmware"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/firmware.dir/link.txt --verbose=$(VERBOSE)

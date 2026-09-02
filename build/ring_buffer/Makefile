@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/michele/projects/c/programmini/build/CMakeFiles /home/michele/projects/c/programmini/build//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	cd /home/michele/projects/c/programmini/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/michele/projects/c/programmini/build/CMakeFiles /home/michele/projects/c/programmini/build/ring_buffer//CMakeFiles/progress.marks
+	cd /home/michele/projects/c/programmini/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ring_buffer/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/michele/projects/c/programmini/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /home/michele/projects/c/programmini/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ring_buffer/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,94 +103,56 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/michele/projects/c/programmini/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ring_buffer/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/michele/projects/c/programmini/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ring_buffer/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/michele/projects/c/programmini/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named firmware
+# Convenience name for target.
+ring_buffer/CMakeFiles/ring_buffer.dir/rule:
+	cd /home/michele/projects/c/programmini/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ring_buffer/CMakeFiles/ring_buffer.dir/rule
+.PHONY : ring_buffer/CMakeFiles/ring_buffer.dir/rule
 
-# Build rule for target.
-firmware: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 firmware
-.PHONY : firmware
-
-# fast build rule for target.
-firmware/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/firmware.dir/build.make CMakeFiles/firmware.dir/build
-.PHONY : firmware/fast
-
-#=============================================================================
-# Target rules for targets named buffer
-
-# Build rule for target.
-buffer: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 buffer
-.PHONY : buffer
-
-# fast build rule for target.
-buffer/fast:
-	$(MAKE) $(MAKESILENT) -f buffer/CMakeFiles/buffer.dir/build.make buffer/CMakeFiles/buffer.dir/build
-.PHONY : buffer/fast
-
-#=============================================================================
-# Target rules for targets named device
-
-# Build rule for target.
-device: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 device
-.PHONY : device
-
-# fast build rule for target.
-device/fast:
-	$(MAKE) $(MAKESILENT) -f device/CMakeFiles/device.dir/build.make device/CMakeFiles/device.dir/build
-.PHONY : device/fast
-
-#=============================================================================
-# Target rules for targets named ring_buffer
-
-# Build rule for target.
-ring_buffer: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ring_buffer
+# Convenience name for target.
+ring_buffer: ring_buffer/CMakeFiles/ring_buffer.dir/rule
 .PHONY : ring_buffer
 
 # fast build rule for target.
 ring_buffer/fast:
-	$(MAKE) $(MAKESILENT) -f ring_buffer/CMakeFiles/ring_buffer.dir/build.make ring_buffer/CMakeFiles/ring_buffer.dir/build
+	cd /home/michele/projects/c/programmini/build && $(MAKE) $(MAKESILENT) -f ring_buffer/CMakeFiles/ring_buffer.dir/build.make ring_buffer/CMakeFiles/ring_buffer.dir/build
 .PHONY : ring_buffer/fast
 
-app/main.o: app/main.c.o
-.PHONY : app/main.o
+src/ring_buffer.o: src/ring_buffer.c.o
+.PHONY : src/ring_buffer.o
 
 # target to build an object file
-app/main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/firmware.dir/build.make CMakeFiles/firmware.dir/app/main.c.o
-.PHONY : app/main.c.o
+src/ring_buffer.c.o:
+	cd /home/michele/projects/c/programmini/build && $(MAKE) $(MAKESILENT) -f ring_buffer/CMakeFiles/ring_buffer.dir/build.make ring_buffer/CMakeFiles/ring_buffer.dir/src/ring_buffer.c.o
+.PHONY : src/ring_buffer.c.o
 
-app/main.i: app/main.c.i
-.PHONY : app/main.i
+src/ring_buffer.i: src/ring_buffer.c.i
+.PHONY : src/ring_buffer.i
 
 # target to preprocess a source file
-app/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/firmware.dir/build.make CMakeFiles/firmware.dir/app/main.c.i
-.PHONY : app/main.c.i
+src/ring_buffer.c.i:
+	cd /home/michele/projects/c/programmini/build && $(MAKE) $(MAKESILENT) -f ring_buffer/CMakeFiles/ring_buffer.dir/build.make ring_buffer/CMakeFiles/ring_buffer.dir/src/ring_buffer.c.i
+.PHONY : src/ring_buffer.c.i
 
-app/main.s: app/main.c.s
-.PHONY : app/main.s
+src/ring_buffer.s: src/ring_buffer.c.s
+.PHONY : src/ring_buffer.s
 
 # target to generate assembly for a file
-app/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/firmware.dir/build.make CMakeFiles/firmware.dir/app/main.c.s
-.PHONY : app/main.c.s
+src/ring_buffer.c.s:
+	cd /home/michele/projects/c/programmini/build && $(MAKE) $(MAKESILENT) -f ring_buffer/CMakeFiles/ring_buffer.dir/build.make ring_buffer/CMakeFiles/ring_buffer.dir/src/ring_buffer.c.s
+.PHONY : src/ring_buffer.c.s
 
 # Help Target
 help:
@@ -200,13 +162,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... buffer"
-	@echo "... device"
-	@echo "... firmware"
 	@echo "... ring_buffer"
-	@echo "... app/main.o"
-	@echo "... app/main.i"
-	@echo "... app/main.s"
+	@echo "... src/ring_buffer.o"
+	@echo "... src/ring_buffer.i"
+	@echo "... src/ring_buffer.s"
 .PHONY : help
 
 
@@ -218,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/michele/projects/c/programmini/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

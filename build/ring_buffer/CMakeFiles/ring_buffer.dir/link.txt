@@ -1,0 +1,2 @@
+/usr/bin/ar qc libring_buffer.a CMakeFiles/ring_buffer.dir/src/ring_buffer.c.o
+/usr/bin/ranlib libring_buffer.a

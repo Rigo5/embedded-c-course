@@ -7,12 +7,13 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 
 add_subdirectory(buffer)
 add_subdirectory(device)
+add_subdirectory(ring_buffer)
 
 add_executable(firmware
     app/main.c
 )
 
-target_link_libraries(firmware PRIVATE buffer device)
+target_link_libraries(firmware PRIVATE buffer device ring_buffer)
 
 target_compile_options(firmware
     PRIVATE

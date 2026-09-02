@@ -12,6 +12,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.28.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeSystem.cmake"
   "/home/michele/projects/c/programmini/device/CMakeLists.txt"
+  "/home/michele/projects/c/programmini/ring_buffer/CMakeLists.txt"
   "/usr/share/cmake-3.28/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake"
   "/usr/share/cmake-3.28/Modules/CMakeGenericSystem.cmake"
@@ -40,6 +41,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "buffer/CMakeFiles/CMakeDirectoryInformation.cmake"
   "device/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "ring_buffer/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -47,4 +49,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/firmware.dir/DependInfo.cmake"
   "buffer/CMakeFiles/buffer.dir/DependInfo.cmake"
   "device/CMakeFiles/device.dir/DependInfo.cmake"
+  "ring_buffer/CMakeFiles/ring_buffer.dir/DependInfo.cmake"
   )

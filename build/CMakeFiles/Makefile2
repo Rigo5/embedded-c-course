@@ -66,17 +66,20 @@ CMAKE_BINARY_DIR = /home/michele/projects/c/programmini/build
 all: CMakeFiles/firmware.dir/all
 all: buffer/all
 all: device/all
+all: ring_buffer/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: buffer/preinstall
 preinstall: device/preinstall
+preinstall: ring_buffer/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/firmware.dir/clean
 clean: buffer/clean
 clean: device/clean
+clean: ring_buffer/clean
 .PHONY : clean
 
 #=============================================================================
@@ -110,11 +113,27 @@ device/clean: device/CMakeFiles/device.dir/clean
 .PHONY : device/clean
 
 #=============================================================================
+# Directory level rules for directory ring_buffer
+
+# Recursive "all" directory target.
+ring_buffer/all: ring_buffer/CMakeFiles/ring_buffer.dir/all
+.PHONY : ring_buffer/all
+
+# Recursive "preinstall" directory target.
+ring_buffer/preinstall:
+.PHONY : ring_buffer/preinstall
+
+# Recursive "clean" directory target.
+ring_buffer/clean: ring_buffer/CMakeFiles/ring_buffer.dir/clean
+.PHONY : ring_buffer/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/firmware.dir
 
 # All Build rule for target.
 CMakeFiles/firmware.dir/all: buffer/CMakeFiles/buffer.dir/all
 CMakeFiles/firmware.dir/all: device/CMakeFiles/device.dir/all
+CMakeFiles/firmware.dir/all: ring_buffer/CMakeFiles/ring_buffer.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/firmware.dir/build.make CMakeFiles/firmware.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/firmware.dir/build.make CMakeFiles/firmware.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/michele/projects/c/programmini/build/CMakeFiles --progress-num=5,6 "Built target firmware"
@@ -122,7 +141,7 @@ CMakeFiles/firmware.dir/all: device/CMakeFiles/device.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/firmware.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/michele/projects/c/programmini/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/michele/projects/c/programmini/build/CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/firmware.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/michele/projects/c/programmini/build/CMakeFiles 0
 .PHONY : CMakeFiles/firmware.dir/rule
@@ -187,6 +206,32 @@ device: device/CMakeFiles/device.dir/rule
 device/CMakeFiles/device.dir/clean:
 	$(MAKE) $(MAKESILENT) -f device/CMakeFiles/device.dir/build.make device/CMakeFiles/device.dir/clean
 .PHONY : device/CMakeFiles/device.dir/clean
+
+#=============================================================================
+# Target rules for target ring_buffer/CMakeFiles/ring_buffer.dir
+
+# All Build rule for target.
+ring_buffer/CMakeFiles/ring_buffer.dir/all:
+	$(MAKE) $(MAKESILENT) -f ring_buffer/CMakeFiles/ring_buffer.dir/build.make ring_buffer/CMakeFiles/ring_buffer.dir/depend
+	$(MAKE) $(MAKESILENT) -f ring_buffer/CMakeFiles/ring_buffer.dir/build.make ring_buffer/CMakeFiles/ring_buffer.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/michele/projects/c/programmini/build/CMakeFiles --progress-num=7,8 "Built target ring_buffer"
+.PHONY : ring_buffer/CMakeFiles/ring_buffer.dir/all
+
+# Build rule for subdir invocation for target.
+ring_buffer/CMakeFiles/ring_buffer.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/michele/projects/c/programmini/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ring_buffer/CMakeFiles/ring_buffer.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/michele/projects/c/programmini/build/CMakeFiles 0
+.PHONY : ring_buffer/CMakeFiles/ring_buffer.dir/rule
+
+# Convenience name for target.
+ring_buffer: ring_buffer/CMakeFiles/ring_buffer.dir/rule
+.PHONY : ring_buffer
+
+# clean rule for target.
+ring_buffer/CMakeFiles/ring_buffer.dir/clean:
+	$(MAKE) $(MAKESILENT) -f ring_buffer/CMakeFiles/ring_buffer.dir/build.make ring_buffer/CMakeFiles/ring_buffer.dir/clean
+.PHONY : ring_buffer/CMakeFiles/ring_buffer.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

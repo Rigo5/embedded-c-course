@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/home/michele/projects/c/programmini/buffer/include -I/home/michele/projects/c/programmini/device/include
+C_INCLUDES = -I/home/michele/projects/c/programmini/buffer/include -I/home/michele/projects/c/programmini/device/include -I/home/michele/projects/c/programmini/ring_buffer/include
 
 C_FLAGS = -g -std=gnu17 -Wall -Wextra -Wpedantic
 

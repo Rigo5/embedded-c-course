@@ -7,3 +7,6 @@
 /home/michele/projects/c/programmini/build/device/CMakeFiles/device.dir
 /home/michele/projects/c/programmini/build/device/CMakeFiles/edit_cache.dir
 /home/michele/projects/c/programmini/build/device/CMakeFiles/rebuild_cache.dir
+/home/michele/projects/c/programmini/build/ring_buffer/CMakeFiles/ring_buffer.dir
+/home/michele/projects/c/programmini/build/ring_buffer/CMakeFiles/edit_cache.dir
+/home/michele/projects/c/programmini/build/ring_buffer/CMakeFiles/rebuild_cache.dir
