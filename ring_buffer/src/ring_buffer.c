@@ -11,11 +11,11 @@ bool ring_buffer_is_empty(const RingBuffer *rb) {
 }
 
 bool ring_buffer_is_full(const RingBuffer *rb) {
-    return rb->count == RING_BUFFER_SIZE;
+    return rb->count >= RING_BUFFER_SIZE;
 }
 
 bool ring_buffer_push(RingBuffer *rb, uint8_t data) {
-    if(ring_buffer_is_full(rb)){
+    if(rb == NULL || ring_buffer_is_full(rb)){
         return false;
     }
     rb->buffer[rb->tail] = data;
@@ -25,19 +25,18 @@ bool ring_buffer_push(RingBuffer *rb, uint8_t data) {
 }
 
 bool ring_buffer_pop(RingBuffer *rb, uint8_t *data) {
-    if(ring_buffer_is_empty(rb)){
+    if(rb == NULL || data == NULL || ring_buffer_is_empty(rb)){
         return false;
     }
 
     *data = rb->buffer[rb->head];
-    rb->head = ++(rb->head) % RING_BUFFER_SIZE;
+    rb->head = ++(rb->head) % RING_BUFFER_SIZE; //questo lo voglio tenere cosi lo considero più pro
     rb->count--; 
     return true;
 }
 
 bool ring_buffer_peek(const RingBuffer *rb, uint8_t *data) {
-    if(ring_buffer_is_empty(rb)){
-        *data = 0; // or some sentinel value indicating empty buffer
+    if(rb == NULL || data == NULL ||ring_buffer_is_empty(rb)){
         return false;
     }
 
@@ -46,7 +45,7 @@ bool ring_buffer_peek(const RingBuffer *rb, uint8_t *data) {
 }
 
 bool ring_buffer_clear(RingBuffer *rb) {
-    if(ring_buffer_is_empty(rb)){
+    if(rb == NULL || ring_buffer_is_empty(rb)){
         return false;
     }
     ring_buffer_init(rb);
@@ -54,5 +53,9 @@ bool ring_buffer_clear(RingBuffer *rb) {
 }
 
 size_t ring_buffer_size(const RingBuffer *rb) {
+    if(rb == NULL){
+        return 0;
+    }
+
     return rb->count;
 }
