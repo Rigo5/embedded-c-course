@@ -7,10 +7,17 @@ void ring_buffer_init(RingBuffer *rb) {
 }
 
 bool ring_buffer_is_empty(const RingBuffer *rb) {
+    if(rb == NULL){
+        return true;
+    }
+
     return rb->count == 0;
 }
 
 bool ring_buffer_is_full(const RingBuffer *rb) {
+    if(rb == NULL){
+        return false;
+    }
     return rb->count >= RING_BUFFER_SIZE;
 }
 
