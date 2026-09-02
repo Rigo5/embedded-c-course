@@ -1,0 +1,9 @@
+/home/michele/projects/c/programmini/build/CMakeFiles/firmware.dir
+/home/michele/projects/c/programmini/build/CMakeFiles/edit_cache.dir
+/home/michele/projects/c/programmini/build/CMakeFiles/rebuild_cache.dir
+/home/michele/projects/c/programmini/build/buffer/CMakeFiles/buffer.dir
+/home/michele/projects/c/programmini/build/buffer/CMakeFiles/edit_cache.dir
+/home/michele/projects/c/programmini/build/buffer/CMakeFiles/rebuild_cache.dir
+/home/michele/projects/c/programmini/build/device/CMakeFiles/device.dir
+/home/michele/projects/c/programmini/build/device/CMakeFiles/edit_cache.dir
+/home/michele/projects/c/programmini/build/device/CMakeFiles/rebuild_cache.dir

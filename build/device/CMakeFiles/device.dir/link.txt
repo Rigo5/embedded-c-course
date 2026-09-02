@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdevice.a CMakeFiles/device.dir/src/device.c.o
+/usr/bin/ranlib libdevice.a
