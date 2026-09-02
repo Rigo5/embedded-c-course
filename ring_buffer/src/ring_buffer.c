@@ -1,6 +1,9 @@
 #include "ring_buffer.h"
 
 void ring_buffer_init(RingBuffer *rb) {
+    if(rb == NULL){
+        return;
+    }
     rb->head = 0;
     rb->tail = 0;
     rb->count = 0;
