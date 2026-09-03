@@ -1,17 +1,16 @@
 #include "moving-avg.h"
 
 
-bool moving_avg_init(MovingAvg *ma) {
+bool moving_avg_init(MovingAvg *ma, RingBuffer *rb, uint32_t count) {
 
-    if(ma == NULL) {
+    if(ma == NULL || rb == NULL) {
         return false;
     }
 
-    RingBuffer rb;
-    uint8_t buffer[MOVING_AVG_SIZE];
-    ring_buffer_init(&rb, buffer, MOVING_AVG_SIZE);
-    ma->rb = rb;
+    ma->rb = *rb;
     ma->sum = 0;
+    ma->count = count;
+
     return true;
 }
 
@@ -20,20 +19,20 @@ bool moving_avg_add(MovingAvg *ma, uint8_t value) {
     if(ma == NULL){
         return false; 
     }
-
+    
     if(ring_buffer_is_full(&ma->rb)) {
         uint8_t old_value;
-        ring_buffer_get(&ma->rb, &old_value);
+        ring_buffer_pop(&ma->rb, &old_value);
         ma->sum -= old_value;
     }
 
-    if(!ring_buffer_put(&ma->rb, value)) {
+    if(!ring_buffer_push(&ma->rb, value)){
         return false;
     }
-
     ma->sum += value;
     return true;
 }
+ 
 
 bool moving_avg_get(const MovingAvg *ma, uint32_t *value) {
     if(ma == NULL || value == NULL) {
