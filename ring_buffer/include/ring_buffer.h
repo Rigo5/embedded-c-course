@@ -5,17 +5,16 @@
 #include <stdbool.h>
 #include <stddef.h>
 
-#define RING_BUFFER_SIZE 8U
-
 typedef struct {
-    uint8_t buffer[RING_BUFFER_SIZE];
-    uint8_t head;
-    uint8_t tail;
-    uint8_t count;
+    uint8_t *buffer;
+    uint32_t head;
+    uint32_t tail;
+    uint32_t count;
+    uint32_t capacity;
 } RingBuffer;
 
 
-void ring_buffer_init(RingBuffer *rb);
+void ring_buffer_init(RingBuffer *rb, uint8_t *buffer, uint32_t capacity);
 bool ring_buffer_is_empty(const RingBuffer *rb);
 bool ring_buffer_is_full(const RingBuffer *rb);
 bool ring_buffer_push(RingBuffer *rb, uint8_t data);
