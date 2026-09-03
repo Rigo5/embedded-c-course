@@ -7,13 +7,12 @@
 
 
 typedef struct {
-    RingBuffer rb;
+    RingBuffer *rb;
     uint32_t sum;
-    uint32_t count;
 } MovingAvg;
 
 
-bool moving_avg_init(MovingAvg *ma, RingBuffer *rb, uint32_t count); // Returns true if initialization is successful, false otherwise.
+bool moving_avg_init(MovingAvg *ma, RingBuffer *rb); // Returns true if initialization is successful, false otherwise.
 bool moving_avg_add(MovingAvg *ma, uint8_t value); // Returns true if the value was successfully added, false otherwise.
 bool moving_avg_get(const MovingAvg *ma, uint32_t *value); // Returns true if the average was successfully retrieved, false otherwise.
 
