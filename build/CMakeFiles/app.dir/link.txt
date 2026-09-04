@@ -1,1 +1,0 @@
-/usr/bin/cc CMakeFiles/app.dir/src/main.c.o CMakeFiles/app.dir/src/device.c.o -o app 
