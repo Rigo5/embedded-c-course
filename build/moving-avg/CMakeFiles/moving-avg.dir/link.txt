@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmoving-avg.a "CMakeFiles/moving-avg.dir/src/moving-avg.c.o"
+/usr/bin/ranlib libmoving-avg.a

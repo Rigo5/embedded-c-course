@@ -35,7 +35,7 @@ bool moving_avg_add(MovingAvg *ma, uint8_t value) {
 }
  
 
-bool moving_avg_get(const MovingAvg *ma, uint32_t *value) {
+bool moving_avg_get(const MovingAvg *ma, float *value) {
     if(ma == NULL || value == NULL) {
         return false;
     }
@@ -44,6 +44,6 @@ bool moving_avg_get(const MovingAvg *ma, uint32_t *value) {
         return false;
     }
 
-    *value = ma->sum / ring_buffer_size(ma->rb);
+    *value = (float)ma->sum / ring_buffer_size(ma->rb);
     return true;
 }

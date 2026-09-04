@@ -24,12 +24,11 @@ CMakeFiles/firmware.dir/app/main.c.o: \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
- /home/michele/projects/c/programmini/buffer/include/buffer.h \
- /usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
- /home/michele/projects/c/programmini/device/include/device.h \
- /home/michele/projects/c/programmini/ring_buffer/include/ring_buffer.h
+ /home/michele/projects/c/programmini/ring_buffer/include/ring_buffer.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h \
+ /home/michele/projects/c/programmini/moving-avg/include/moving-avg.h

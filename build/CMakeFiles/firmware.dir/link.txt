@@ -1,1 +1,1 @@
-/usr/bin/cc -g CMakeFiles/firmware.dir/app/main.c.o -o firmware  buffer/libbuffer.a device/libdevice.a ring_buffer/libring_buffer.a 
+/usr/bin/cc -g CMakeFiles/firmware.dir/app/main.c.o -o firmware  buffer/libbuffer.a device/libdevice.a ring_buffer/libring_buffer.a moving-avg/libmoving-avg.a ring_buffer/libring_buffer.a 

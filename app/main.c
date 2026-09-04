@@ -1,45 +1,50 @@
 #include <stdio.h>
-#include "buffer.h"
-#include "device.h"
+#include <stdint.h>
+
 #include "ring_buffer.h"
 #include "moving-avg.h"
 
-#define MOVING_AVG_SIZE 32
-
-typedef int (*Operation)(int, int);
-
-void perform_operation(Operation op, int a, int b)
-{
-    int result = op(a, b);
-    printf("Result: %d\n", result);
-}
-
-int add(int a, int b)
-{
-    return a + b;
-}
-
-int multiply(int a, int b)
-{
-    return a * b;
-}
+#define WINDOW_SIZE 4U
 
 int main(void)
 {
+    uint8_t storage[WINDOW_SIZE];
+
+    RingBuffer rb;
     MovingAvg ma;
-    RingBuffer rb2;
-    uint8_t buffer[MOVING_AVG_SIZE];
 
-    ring_buffer_init(&rb2, buffer, MOVING_AVG_SIZE);
-    moving_avg_init(&ma, &rb2);
-    moving_avg_add(&ma, 10);
-    moving_avg_add(&ma, 20);
-    moving_avg_add(&ma, 30);
+    ring_buffer_init(&rb, storage, WINDOW_SIZE);
 
-    uint32_t avg;
-    if (moving_avg_get(&ma, &avg))
-    {
-        printf("moving average = %u\n", avg);
+    if (!moving_avg_init(&ma, &rb)) {
+        printf("Errore init moving average\n");
+        return 1;
     }
+
+    uint8_t samples[] = {
+        10, 10, 11, 10,
+        50,
+        11, 10, 10
+    };
+
+    size_t sample_count = sizeof(samples) / sizeof(samples[0]);
+
+    printf("RAW\tFILTERED\n");
+
+    for (size_t i = 0; i < sample_count; i++) {
+        float avg;
+
+        if (!moving_avg_add(&ma, samples[i])) {
+            printf("Errore add sample\n");
+            return 1;
+        }
+
+        if (!moving_avg_get(&ma, &avg)) {
+            printf("Errore get average\n");
+            return 1;
+        }
+
+        printf("%u\t%f\n", samples[i], avg);
+    }
+    
     return 0;
 }

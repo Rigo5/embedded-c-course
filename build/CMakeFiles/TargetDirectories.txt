@@ -10,3 +10,6 @@
 /home/michele/projects/c/programmini/build/ring_buffer/CMakeFiles/ring_buffer.dir
 /home/michele/projects/c/programmini/build/ring_buffer/CMakeFiles/edit_cache.dir
 /home/michele/projects/c/programmini/build/ring_buffer/CMakeFiles/rebuild_cache.dir
+/home/michele/projects/c/programmini/build/moving-avg/CMakeFiles/moving-avg.dir
+/home/michele/projects/c/programmini/build/moving-avg/CMakeFiles/edit_cache.dir
+/home/michele/projects/c/programmini/build/moving-avg/CMakeFiles/rebuild_cache.dir
