@@ -48,10 +48,11 @@ bool ring_buffer_pop(RingBuffer *rb, uint8_t *data) {
 }
 
 bool ring_buffer_peek(const RingBuffer *rb, uint8_t *data) {
+
     if(rb == NULL || data == NULL ||ring_buffer_is_empty(rb)){
         return false;
     }
-
+    
     *data = rb->buffer[rb->head];
     return true;
 }
@@ -63,6 +64,18 @@ bool ring_buffer_clear(RingBuffer *rb) {
     ring_buffer_init(rb, rb->buffer, rb->capacity);
     return true;
 }
+
+bool ring_buffer_get(const RingBuffer *rb, uint32_t index, uint8_t *data) {
+    if(rb == NULL || data == NULL || index >= rb->count){
+        return false;
+    }
+
+    uint32_t actual_index = (rb->head + index) % rb->capacity;
+    *data = rb->buffer[actual_index];
+    
+    return true;
+}
+
 
 size_t ring_buffer_size(const RingBuffer *rb) {
     if(rb == NULL){

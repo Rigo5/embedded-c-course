@@ -21,6 +21,7 @@ bool ring_buffer_push(RingBuffer *rb, uint8_t data);
 bool ring_buffer_pop(RingBuffer *rb, uint8_t *data);
 bool ring_buffer_peek(const RingBuffer *rb, uint8_t *data);
 bool ring_buffer_clear(RingBuffer *rb);
+bool ring_buffer_get(const RingBuffer *rb, uint32_t index, uint8_t *data);
 size_t ring_buffer_size(const RingBuffer *rb);
 
 #endif // RING_BUFFER_H
