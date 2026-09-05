@@ -3,8 +3,9 @@
 static float multiply_accumulate(const float *coefficients, const RingBuffer *buffer){
     float sum = 0.0f;
     size_t size = ring_buffer_size(buffer);
-    for(size_t i = 0; i < size; i++){
-        float value;
+    
+    for(int i = (int)size - 1; i >= 0; i--){
+        uint8_t value;
         ring_buffer_get(buffer, i, &value);
         sum += value * coefficients[i];
     }
@@ -22,14 +23,15 @@ bool fir_filter_init(FIRFilter *filter, float *coefficients, RingBuffer *buffer)
     return true;
 }
 
-bool fir_filter_add(FIRFilter *filter, float input){
+bool fir_filter_add(FIRFilter *filter, uint8_t input){
     if(filter == NULL || filter->buffer == NULL || filter->coefficients == NULL){
         return false;
     }
 
-    if(!ring_buffer_add(filter->buffer, input)){
+    if(!ring_buffer_push(filter->buffer, input)){
         return false;
     }
+
     filter->sum = multiply_accumulate(filter->coefficients, filter->buffer);
     return true;
 }

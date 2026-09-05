@@ -70,9 +70,9 @@ bool ring_buffer_get(const RingBuffer *rb, uint32_t index, uint8_t *data) {
         return false;
     }
 
-    uint32_t actual_index = (rb->head + index) % rb->capacity;
+    uint32_t actual_index = (rb->tail + index) % rb->capacity;
     *data = rb->buffer[actual_index];
-    
+
     return true;
 }
 
